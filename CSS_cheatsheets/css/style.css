@@ -1,5 +1,22 @@
 /*it is convention to create a folder named 'css' in your project root and create file there named 'style.css' if you are only using 1 style sheet */
 
-h3 {
-    color: lightgreen;
+/* the first part of a CSS declaration is the selector. it can be an element, like 'h3', a class, or an Id. the difference
+   really comes down to: you will use a class usually multiple times, wheras an Id is unique */
+
+
+body {
+    /* color: purple; */
+    /* color values can be both literals, or hexadecimal, starting with a '#' sign, or rgb values, like rgb(0,0,255) */
+    background-color: #f4f4f4; /*this color is light-grey */
+    color: #555555; /* this color is dark-grey */
+    /*
+    font-family: Arial, Helvetica, sans-serif; /* the second font is a fall-back, in case Arial can't load */
+    /* 'web-safe fonts will run in any browser, you don't need to import them */
+    /* btw, 'serif' means including "fancy sticking out stuff", and 'sans-serif' means 'without', flatter stuff. the
+       default is actually Times New Roman  */
+    /*font-size: 18px; /* 16px is the default */
+    /*font-weight: normal; /* can also be 'bold' or a number*/
+    font: normal 16px Arial, Helvatica, sans-serif; /* this is a short-hand for all the font stuff above */
+    line-height: 1.6em; /* this will determine the spacing between each line of text */
+    /* using 'em' as a unit versus pixels, makes the site more suited to responsive websites */
 }
