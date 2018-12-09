@@ -1,8 +1,11 @@
 /*it is convention to create a folder named 'css' in your project root and create file there named 'style.css' if you are only using 1 style sheet */
 
 /* the first part of a CSS declaration is the selector. it can be an element, like 'h3', a class, or an Id. the difference
-   really comes down to: you will use a class usually multiple times, wheras an Id is unique */
+   really comes down to: you will use a class usually multiple times, wheras an Id is unique. a framework like Bootstrap
+   however doesn't use Id's at all, it's all classes */
 
+/* it is also good practice, when using one stylesheet, to put global declarations at the top and specific declarations at the bottom, because
+   order of declarations matters!!  */
 
 body {
     /* color: purple; */
@@ -19,4 +22,166 @@ body {
     font: normal 16px Arial, Helvatica, sans-serif; /* this is a short-hand for all the font stuff above */
     line-height: 1.6em; /* this will determine the spacing between each line of text */
     /* using 'em' as a unit versus pixels, makes the site more suited to responsive websites */
+    margin: 0;
+    /* for now, remember that margin: 0 removes spaces around your element */
 }
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* states have different states, which you can target with a colon like below */
+a:hover {
+    color: red;
+}
+
+a:active {
+    /* the 'active' state is during mouse-down on the link */
+    color: green;
+}
+
+a:visited {
+    /* color: black; */
+}
+
+.container {
+    /* using pixels here makes it non-responsive, so instead you % to accomodate smaller screens */
+    /* width: 500px; */
+    width: 80%;
+    /* margin is pretty much 'spacing around an element'. setting it to auto will apply even amounts of spacing around
+       your element. in the video, the difference between 'margin' and 'padding' is discussed around 25:00. to start, 
+       they both deal with space around your element. it has to do with the 'box model' in CSS. the padding is the space
+       between an element's 'content' and an element's 'border'. in that regard, it is "internal". the margin is space
+       AROUND the border of an element, so "external". so in an easy analogy, think of padding like a "sumo-suit" for 
+       your element. */
+     margin: auto; /* 'margin: top right bottom' left OR, you can do 'margin: top/bottom left/right', like margin: 5px 10px  */
+     /* you can also use the format above for padding */
+}
+
+/* to target a class you use the notation .yourClass */
+.box1 {
+    background-color: #333333; /* this can also be written as short-hand #333*/
+    color: #fff; /* this is equivalent to #ffffff */
+    
+     /* border-right: 5px red solid; /* size, color, type */
+     /* border-left: 5px red solid; 
+     border-top: 5px red solid; 
+     border-bottom: 5px red solid; */
+     /* this line below is the same as writing it out like above */
+     border: 5px red solid; 
+     /* you can also set the border properties separately */
+     border-width: 3px;
+     border-bottom-width: 10px;
+     border-bottom-style: dotted;
+     border-bottom-style: solid; /* the last line determines the outcome */
+
+     padding-top: 50px; /* note that an <h1> by default has some padding */
+     padding-bottom: 50px; 
+     padding-left: 50px; 
+     padding-right: 50px; 
+     /* or, same as above: */
+     padding: 50px;
+     /* notice padding creates room INSIDE the element, padding-top will 
+        actually push it down by creating space at the top. */
+    margin-top: 50px;
+}
+
+/* if you want to, you can remove the margin and padding from EVERYTHING on the
+   page like this:
+
+   * {
+       padding: 0;
+       margin: 0;
+   }
+
+   where the asterisk selects everything. this is called a 'reset'   
+*/
+
+/* .my-form input[type="submit"] { */
+.button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+}    
+.button:hover {
+    color: #fff;
+    background-color: red;
+}
+
+/* this selector means that you are targetting any h1 element within an 
+   element with the 'box1' class, with the '>' symbol meaning 'only 
+   direct children of the class, not any deeper' */
+.box1 > h1 {
+    /* this declaration showcases some different text-styling options */
+    font-family: Tahoma;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1em;
+    word-spacing: 1em;
+}
+
+.box2 {
+    border: 3px darkgray dotted;
+    padding: 20px;
+    /* the line below means 20px top and bottom, 0 (additional) margin 
+       left and right */
+    margin: 20px 0;
+}
+
+.categories {
+    border: 1px #ccc solid;
+    padding: 10px;
+    /* the thing below gives your element rounded edges */
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+.categories > h2 {
+    /* this sets the text to align at the center of the element */
+    text-align: center;
+}
+
+/* note that <ul> elements have some padding by default */
+.categories > ul {
+    padding-left: 20px;
+    /* list-style targets the bullet points of a list */
+    /* list-style: square; */
+    list-style: none;
+}
+
+.categories li {
+    padding-bottom: 8px;
+    border-bottom: 1px #333 dotted;
+    list-style-image: url(../images/check.png);
+}
+
+.my-form {
+    padding: 20px;
+}
+
+/* this means .form-group classes within the .my-form class */
+.my-form .form-group {
+    padding-bottom: 15px;
+}
+
+.my-form label {
+    /* labels are in-line by default, so using 'block' will set them on their own line */
+    display: block;
+}
+
+/* notice that this will not hit the textarea, because it is not an input tag. it will
+   however hit the submit button, because that IS an input  */
+/* by adding the [type=text], you can target a specific type of the element. add a comma
+   and then another selector to apply the declaration to multiple selectors */
+.my-form input[type="text"], .my-form textarea {
+    padding: 8px;
+    /* using a percentage on width means 'an x% of its parent container' */
+    width: 100%;
+}
+
+
