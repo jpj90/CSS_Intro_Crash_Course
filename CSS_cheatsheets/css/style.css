@@ -26,6 +26,11 @@ body {
     /* for now, remember that margin: 0 removes spaces around your element */
 }
 
+.clr {
+    /* this will clear any floats above the element with this class, otherwise your mark-up will go weird */
+    clear:both;
+}
+
 a {
     text-decoration: none;
     color: #000;
@@ -184,4 +189,73 @@ a:visited {
     width: 100%;
 }
 
+.block {
+    float: left;
+    width: 33.33%;
+    /* the two lines below will push it off a single row */
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* the line below fixes the stuff from above, by taking border and padding into
+       account when distributing the 'width' property */
+    box-sizing: border-box;
+    /* the stuff above is done quite nicely by Flexbox, check out that video also
+       TraversyMedia in the same HTML playlist */
+}
 
+/* this next notation selects an Id (note2self: now Jquery makes so much more sense!) */
+#main-block {
+    float: left;
+    width: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* POSITIONING:
+   
+   * static: this is the default positioning, following the order of declaration in the 
+     template. 
+   * relative: this means relative to its natural position, so that sets stuff like top,
+     left, right, bottom.
+   * absolute: this means you can position wherever you want WITHIN A RELATIVE ELEMENT!
+   * fixed: this means fixed in relation to the viewport (visible area of the webpage).
+   * intial: this will set the element to its default value.
+   * inherit: it will inherit the position of its parent element.
+*/
+
+.positioning-box {
+    width: 800px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-top: 30px;
+    /* the line below will fix the 'position' issue below that flows from using 
+       position: absolute; there without a position: relative; here */
+    position: relative;
+}
+
+.positioning-box h1 {
+    position: absolute;
+    top: 100px;
+    /* if you leave it as is, without a 'relative' parent, it will position itself 
+       relative to THE ENTIRE HTML DOCUMENT => BAD! */
+    left: 200px;
+}
+
+.positioning-box h2 {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+}
+
+.fix-me {
+    position: fixed;
+    top: 400px;
+}
