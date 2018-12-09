@@ -1,0 +1,5 @@
+/*it is convention to create a folder named 'css' in your project root and create file there named 'style.css' if you are only using 1 style sheet */
+
+h3 {
+    color: lightgreen;
+}

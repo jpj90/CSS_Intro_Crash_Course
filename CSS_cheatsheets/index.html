@@ -1,8 +1,22 @@
 <!DOCTYPE html>
+<html>
+    <!-- little cheat in Chrome: press Ctrl-U to view the source -->
     <head>
-     <title></title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- don't actually use <style> tags, just here for demo -->
+    <style> 
+        h2 {color: blue; /*notice that you can use the element itself as a selector, instead of a class */}
+    </style>
+     <title>CSS Cheat Sheet</title>
+     <!-- first of all DON'T use inline CSS with the 'style' attribute on the element, it will become a mess! 
+          remember 'seperation of concerns'! also, preferably use a seperate .css file, not 'internal' css
+          where it is stuck in the <style></style> element in your html <head></head> element. that means it
+          can't be used elsewhere, PLUS you are needlessly bloating your html file ('external' css) -->
     </head>
     <body>
-        <script src="" async defer></script>
+        <h1 style="color: red">Hello World - inline CSS</h1> <!-- this is an example of 'inline' css, where you are
+        mixing 'presentation' (the html) with the 'styling' (css) => BAD!! -->
+        <h2>Hello World - internal CSS</h1> 
+        <h3>Hello World - external CSS</h3>
     </body>
 </html>
