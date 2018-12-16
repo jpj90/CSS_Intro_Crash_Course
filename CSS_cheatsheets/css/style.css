@@ -239,6 +239,15 @@ a:visited {
     /* the line below will fix the 'position' issue below that flows from using 
        position: absolute; there without a position: relative; here */
     position: relative;
+    /* the ../ will jump up 1 directory */
+    background-image: url('../images/bgimage.png');
+    /* this means that the image is pushed over a 100 and down 200 pixels and then
+       repeated */
+    background-position: 100px 200px;
+    background-repeat: no-repeat;
+
+    /* this will re-center the image, horizontally and vertically */
+    background-position: center center;
 }
 
 .positioning-box h1 {
@@ -258,4 +267,22 @@ a:visited {
 .fix-me {
     position: fixed;
     top: 400px;
+}
+
+/* this colon after the class indicates the use of pseudo-class */
+.my-list li:first-child{
+    /* note that the use of background-COLOR is not required  */
+    background: red;
+}
+
+.my-list li:last-child{
+    background: blue;
+}
+
+.my-list li:nth-child(5){
+    background: coral;
+}
+
+.my-list li:nth-child(even){
+    background: grey;
 }
