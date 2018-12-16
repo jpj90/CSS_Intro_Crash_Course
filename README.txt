@@ -3,3 +3,4 @@ https://youtu.be/yfoY53QXEnI
 
 * 2018/12/09: got to 0:51:15
 * 2018/12/09: got to 1:03:41
+* 2018/12/16: completed the video
